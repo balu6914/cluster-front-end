@@ -20,6 +20,9 @@
 
 **_Cluster GPU Market Place_** is a web application designed to facilitate the management and utilization of GPU clusters. This documentation provides an overview of the project structure, key components, and their functionalities.
 
+
+![Banner](https://i.ibb.co/wS8PW2F/Screenshot-2024-06-01-170117.png "GPU Market Place")
+
 ## Installation
 
 To get started with the Cluster GPU Market Place, follow these steps:
