@@ -92,7 +92,7 @@ const App = () => {
   return (
     // Provide Wagmi configuration and RainbowKit provider
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} theme={darkTheme({ 
+      <RainbowKitProvider coolMode chains={chains} theme={darkTheme({ 
         accentColor: '#9f61ff', 
         accentColorForeground: 'white', 
         borderRadius: 'medium', 
@@ -101,9 +101,7 @@ const App = () => {
       })}>
         {/* Use React Router for navigation */}
         <Router>
-          {/* Include Navbar component */}
           <Navbar />
-          {/* Render Routes with location tracking */}
           <RoutesWithLocation />
         </Router>
       </RainbowKitProvider>
