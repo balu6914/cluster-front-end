@@ -19,7 +19,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { useAccount, useDisconnect } from 'wagmi';
 
 
-const WalletComponent = ({ accountConnect, isWalletOpen, setIsWalletOpen, setAccountConnect, address, currentUsername, currentUserBalance }) => {
+const WalletComponent = ({ accountConnect, isWalletOpen,registrationReq, setIsWalletOpen, setAccountConnect, address, currentUsername, currentUserBalance }) => {
   const walletRef = useRef(null);
   const handleClickOutside = (event) => {
     if (walletRef.current && !walletRef.current.contains(event.target)) {
@@ -40,7 +40,7 @@ const WalletComponent = ({ accountConnect, isWalletOpen, setIsWalletOpen, setAcc
 
   return (
     <>
-      {accountConnect && isWalletOpen && (
+      {accountConnect && isWalletOpen && registrationReq===false && (
         <motion.div
           className="walletContainer"
           initial={{ height: '0px', overflow: 'hidden' }}
@@ -357,7 +357,7 @@ useEffect(() => {
 
             </div>
           }
-          <WalletComponent currentUserBalance={currentUserBalance} setIsWalletOpen={setIsWalletOpen} accountConnect={accountConnect} setAccountConnect={setAccountConnect} isWalletOpen={isWalletOpen} address={address} currentUsername={currentUsername} />
+          <WalletComponent currentUserBalance={currentUserBalance} registrationReq={registrationReq} setIsWalletOpen={setIsWalletOpen} accountConnect={accountConnect} setAccountConnect={setAccountConnect} isWalletOpen={isWalletOpen} address={address} currentUsername={currentUsername} />
           {accountConnect && registrationReq===false &&
             <div className='WLTConnectbtn'>
               {/* <ConnectButton accountStatus={{ smallScreen: 'none' }} chainStatus={{ smallScreen: "none", largeScreen: "none" }} showBalance={{ smallScreen: false, largeScreen: false }} label="Sign in" /> */}
@@ -372,7 +372,7 @@ useEffect(() => {
           {!address  &&
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem 0', margin: '1rem 0', maxWidth:'22rem', minWidth:'22rem'}}>
               <Link to={'/home'}><img style={{ height: '3.5rem' }} src='./assets/clusterProtocol.webp' alt="Cluster Protocol" /></Link>
-              <h1 className='loginSubheader'>Sign in With Favourite Social Account</h1>
+              <h1 className='loginSubheader' style={{textAlign:'left'}}>Sign in With Favourite Social Account</h1>
 
               <div className='WLTConnectbtnLoginSocialContainer'>
                   <motion.div

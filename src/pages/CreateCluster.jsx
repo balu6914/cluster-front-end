@@ -133,7 +133,7 @@ export default function CreateCluster(){
     }, []);
     
     return (
-      <motion.div style={{transition:'3s ease'}} initial={{opacity:0, transform:'scale(0.3)'}} animate={{opacity:1, transform:'scale(1)'}} exit={{opacity:0,transform:'scale(2)'}} >
+      <div style={{transition:'3s ease'}} initial={{opacity:0, transform:'scale(0.3)'}} animate={{opacity:1, transform:'scale(1)'}} exit={{opacity:0,transform:'scale(2)'}} >
         <div className='GA_bgD_DIV'>
           <img className='GA_bgD' src='./assets/bg_design.svg' alt="Background Design"></img>
         </div>
@@ -299,7 +299,7 @@ export default function CreateCluster(){
             <button className='PayButton'> Pay and Deploy Now</button>
           </div>
         </div>
-      </motion.div>
+      </div>
     );
   };
   
